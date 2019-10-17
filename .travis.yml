@@ -17,7 +17,7 @@ after_success:
   - docker build -t $REPO/$TAG $TRAVIS_BUILD_DIR/deploy/docker/Clients
   - docker tag $REPO/$TAG $DOCKER_USER/$REPO:$TAG
   - docker push $DOCKER_USER/$REPO:$TAG
-  - cp $TRAVIS_BUILD_DIR/src/Clients/build/libs/ordering* $TRAVIS_BUILD_DIR/deploy/docker/order/drop/
+  - cp $TRAVIS_BUILD_DIR/src/Backend/OrderService/build/libs/ordering* $TRAVIS_BUILD_DIR/deploy/docker/order/drop/
   - export TAG=order
   - docker build -t $REPO/$TAG $TRAVIS_BUILD_DIR/deploy/docker/order/drop/
   - docker tag $REPO/$TAG $DOCKER_USER/$REPO:$TAG
