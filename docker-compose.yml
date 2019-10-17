@@ -8,14 +8,14 @@ services:
                 limits:
                     cpus: "0.15"
                     memory: 200M
-                restart_policy:
-                    condition: on-failure
-            ports:
-            
-                - "28017:28017"
-                - "27017:27017"
-            volumes:
-                - "db-data:/data/db"
+            restart_policy:
+                condition: on-failure
+        ports:
+        
+            - "28017:28017"
+            - "27017:27017"
+        volumes:
+            - "db-data:/data/db"
     order:
         image: caulin98/p1gps:db
         depends_on:
@@ -26,10 +26,10 @@ services:
                 limits:
                     cpus: "0.3"
                     memory: 500M
-                restart_policy:
-                    condition: on-failure
+            restart_policy:
+                condition: on-failure
         ports:
-            - "80:8080"
+            - "8080:8080"
     web:
         image: caulin98/p1gps:db
         deploy:
@@ -38,8 +38,8 @@ services:
                 limits:
                     cpus: "0.25"
                     memory: 300M
-                restart_policy:
-                    condition: on-failure
+            restart_policy:
+                condition: on-failure
         ports:
             - "80:8080"
 volumes:
