@@ -17,7 +17,7 @@ services:
         volumes:
             - "db-data:/data/db"
     order:
-        image: racalo98/p1gps:db
+        image: racalo98/p1gps:order
         depends_on:
             - "mongo" 
         deploy:
@@ -31,7 +31,7 @@ services:
         ports:
             - "8080:8080"
     web:
-        image: racalo98/p1gps:db
+        image: racalo98/p1gps:web
         deploy:
             replicas: 1 # para escabilidad del servicio
             resources:
