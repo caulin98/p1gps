@@ -21,4 +21,4 @@ after_success:
   - export TAG=order
   - docker build -t $REPO/$TAG $TRAVIS_BUILD_DIR/deploy/docker/Order
   - docker tag $REPO/$TAG $DOCKER_USER/$REPO:$TAG
-  - dockerpush $DOCKER_USER/$REPO:$TAG
+  - docker push $DOCKER_USER/$REPO:$TAG
